@@ -1,0 +1,18 @@
+services:
+#    admin.example:
+#        class: AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+services:
+    # ...
+    anunturi:
+        class: AdminBundle\Admin\CategoryAdmin
+        arguments: [~, AdminBundle\Entity\Category, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Anunturi }
+            
+    blog_post:
+        class: AdminBundle\Admin\BlogPostAdmin
+        arguments: [~, AdminBundle\Entity\BlogPost, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Blog }
