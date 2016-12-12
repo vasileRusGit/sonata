@@ -99,12 +99,3 @@ fos_user:
 
     service:
         user_manager: sonata.user.orm.user_manager 
-
-            
-#    orm:
-#        entity_managers:
-#            default:
-#                mappings:
-#                    ApplicationSonataUserBundle: ~
-#                    SonataUserBundle: ~
-#                    FOSUserBundle: ~                                    # If SonataUserBundle extends it

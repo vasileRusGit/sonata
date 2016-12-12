@@ -36,9 +36,8 @@ class BlogPost {
     private $body;
 
     /**
-     * @var bool
      *
-     * @ORM\Column(name="draft", type="boolean")
+     * @ORM\Column(name="draft", type="string", nullable=true)
      */
     private $draft;
 

@@ -24,22 +24,34 @@ class Category {
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="product_name", type="string", length=255)
      */
-    private $name;
+    private $product_name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="body", type="string", length=255)
+     * @ORM\Column(name="car_mark", type="string" , length=255)
      */
-    private $body;
+    private $car_mark;
+
+    /**
+     *
+     * @ORM\Column(name="car_model", type="string" , length=255)
+     */
+    private $car_model;
     
     /**
      *
-     * @ORM\Column(name="category")
+     * @ORM\Column(name="car_year", type="integer",length=11)
      */
-    private $category;
+    private $car_year;
+    
+    /**
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
 
     /**
      * Get id
@@ -50,41 +62,48 @@ class Category {
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Category
-     */
-    public function setName($name) {
-        $this->name = $name;
-
-        return $this;
+    function getProductName() {
+        return $this->product_name;
     }
 
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName() {
-        return $this->name;
+    function setProductName($product_name) {
+        $this->product_name = $product_name;
+    }
+    
+    function getCarMark() {
+        return $this->car_mark;
     }
 
-    function getBody() {
-        return $this->body;
+    function setCarMark($car_mark) {
+        $this->car_mark = $car_mark;
+    }
+    
+    function getCarModel() {
+        return $this->car_model;
     }
 
-    function setBody($body) {
-        $this->body = $body;
+    function setCarModel($car_model) {
+        $this->car_model = $car_model;
     }
 
-    function getCategory() {
-        return $this->category;
+    function getCarYear() {
+        return $this->car_year;
     }
 
-    function setCategory($category) {
-        $this->category = $category;
+    function setCarYear($car_year) {
+        $this->car_year = $car_year;
     }
+
+
+    function getDescription() {
+        return $this->description;
+    }
+
+    function setDescription($description) {
+        $this->description = $description;
+    }
+
+
+
 
 }
