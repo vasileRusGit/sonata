@@ -24,6 +24,7 @@ class CategoryAdmin extends AbstractAdmin {
                 ->add('car_model', 'text')
                 ->add('car_year', 'choice', array(
                     'choices' => $years))
+                ->add('file', 'file', array('required' => false))
                 ->add('description', 'textarea')
         ;
     }
@@ -37,8 +38,23 @@ class CategoryAdmin extends AbstractAdmin {
                 ->add('car_mark')
                 ->add('car_model')
                 ->add('car_year')
+                ->add('imageName')
                 ->add('description')
         ;
+    }
+
+    // IMAGE UPLOAD
+    public function prePersist($product) {
+        $this->saveFile($product);
+    }
+
+    public function preUpdate($product) {
+        $this->saveFile($product);
+    }
+
+    public function saveFile($product) {
+        $basepath = $this->getRequest()->getBasePath();
+        $product->upload($basepath);
     }
 
 }
