@@ -31,7 +31,7 @@ class Category {
     /**
      * @var string
      *
-     * @ORM\Column(name="car_mark", type="string" , length=255)
+     * @ORM\Column(name="car_mark", type="string", nullable=true)
      */
     private $car_mark;
 
@@ -43,7 +43,7 @@ class Category {
     
     /**
      *
-     * @ORM\Column(name="car_year", type="integer",length=11)
+     * @ORM\Column(name="car_year", type="string")
      */
     private $car_year;
     
