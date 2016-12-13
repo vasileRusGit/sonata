@@ -6,10 +6,10 @@ services:
 services:
     # ...
     anunturi:
-        class: AdminBundle\Admin\CategoryAdmin
-        arguments: [~, AdminBundle\Entity\Category, ~]
+        class: AdminBundle\Admin\AnnouncementAdmin
+        arguments: [~, AdminBundle\Entity\Announcement, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Anunturi }
+            - { name: sonata.admin, manager_type: orm, label: Announcement }
             
 #    images:
 #        class: AdminBundle\Admin\ProductAdmin
