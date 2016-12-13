@@ -107,7 +107,7 @@ class Category {
     /**
      * @var string
      *
-     * @ORM\Column(name="imageName", type="string", length=255)
+     * @ORM\Column(name="imageName", type="string", length=255, nullable=true)
      */
     protected $imageName;
     protected $file;

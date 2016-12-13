@@ -11,10 +11,12 @@ class CategoryAdmin extends AbstractAdmin {
 
     protected function configureFormFields(FormMapper $formMapper) {
         // for loop years
-        for ($i = 0; $i <= 50; $i++) {
+        for ($i = 2016; $i >= 1970; $i--) {
             $time = new \DateTime('now');
-            $years[] = $time->modify("-$i year")->format('Y');
+            $years[$i] = (string)$i;
         }
+        
+//        var_dump($years);die;
 
         $formMapper->add('product_name', 'text')
                 ->add('car_mark', 'choice', array(
@@ -23,6 +25,7 @@ class CategoryAdmin extends AbstractAdmin {
                     'required' => false))
                 ->add('car_model', 'text')
                 ->add('car_year', 'choice', array(
+//                    'choices_as_values' => true,
                     'choices' => $years))
                 ->add('file', 'file', array('required' => false))
                 ->add('description', 'textarea')
