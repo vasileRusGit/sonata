@@ -11,8 +11,9 @@ class AnnouncementAdmin extends AbstractAdmin {
 
     protected function configureFormFields(FormMapper $formMapper) {
         // for loop years
+        $years = [];
         for ($i = 2016; $i >= 1970; $i--) {
-            $time = new \DateTime('now');
+//            $time = new \DateTime('now');
             $years[$i] = (string)$i;
         }
 
