@@ -15,8 +15,6 @@ class CategoryAdmin extends AbstractAdmin {
             $time = new \DateTime('now');
             $years[$i] = (string)$i;
         }
-        
-//        var_dump($years);die;
 
         $formMapper->add('product_name', 'text')
                 ->add('car_mark', 'choice', array(
@@ -25,7 +23,6 @@ class CategoryAdmin extends AbstractAdmin {
                     'required' => false))
                 ->add('car_model', 'text')
                 ->add('car_year', 'choice', array(
-//                    'choices_as_values' => true,
                     'choices' => $years))
                 ->add('file', 'file', array('required' => false))
                 ->add('description', 'textarea')
